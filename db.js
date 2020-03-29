@@ -25,7 +25,7 @@ const dbService = {
     })
   },
   deleteProposal: async (id) => {
-    await this.db.collection('proposals').deleteOne({ _id: id })
+    await this.db.collection('proposals').deleteOne({ _id: new mongodb.ObjectID(id) })
   }
 }
 
