@@ -19,12 +19,12 @@ const dbService = {
   fetchProposals: async () => {
     return await this.db.collection('proposals').find({}).toArray()
   },
-  updateProposal: async(id, proposal) => {
+  updateProposal: async (id, proposal) => {
     await this.db.collection('proposals').updateOne({ _id: new mongodb.ObjectID(id) }, {
       $set: proposal
     })
   },
-  deleteProposal: async(id) => {
+  deleteProposal: async (id) => {
     await this.db.collection('proposals').deleteOne({ _id: id })
   }
 }
